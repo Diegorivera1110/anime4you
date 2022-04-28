@@ -16,41 +16,34 @@
     <title>Anime4You</title>
   </head>
   <body class="black">
+    <!-- Header Section -->
     <header class="yellow darken-2">
       <h1>Anime4You</h1>
+      <p>Look up anime and add your watch list.</p>
+
+      <!-- Search Button Sections-->
       <div id="search">
-        <button
-          id="search-anime"
-          class="btn"
-          data-toggle="modal"
-          data-target="anime-modal"
-        >
-          Search Anime
-        </button>
-        <button
-          id="search-genre"
-          class="btn"
-          data-toggle="modal"
-          data-target="genre-modal"
-        >
-          Search Genre
-        </button>
+        <button id="search-anime" class="btn">Search Anime</button>
+        <button id="search-genre" class="btn">Search Genre</button>
       </div>
     </header>
 
     <main class="row">
-      <section class="anime-list col s9">
-        <section id="current-airing-anime" class="orange darken-1">
+      <section class="col s9">
+        <!-- Current/Ongoing Anime List Section -->
+        <section id="current-airing-anime" class="anime-list orange darken-1">
           <h2>Current Airing Anime</h2>
           <div id="current-airing-list"></div>
         </section>
 
-        <section id="top-anime" class="orange darken-4">
+        <!-- Top Rated Anime List Section -->
+        <section id="top-anime" class="anime-list orange darken-4">
           <h2>Top Anime</h2>
           <div id="top-anime-list"></div>
         </section>
       </section>
 
+      <!-- Watch Anime List -->
       <section id="watch-anime" class="orange lighten-2 col s3">
         <h2>Watchlist</h2>
         <ol id="watch-anime-list"></ol>

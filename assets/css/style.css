@@ -5,7 +5,12 @@ header {
 
 h1 {
   font-weight: bold;
-  padding: 12px
+  padding: 12px;
+  padding-bottom: 0px;
+}
+
+header p {
+  font-size: 25px;
 }
 
 .btn {
@@ -27,6 +32,8 @@ h2 {
 
 #watch-anime {
   margin-top: 35px;
+  min-height: 450px;
+  border-radius: 20px;
 }
 
 
