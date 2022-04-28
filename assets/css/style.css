@@ -1,0 +1,32 @@
+header {
+  margin-top: -39px;
+  text-align: center;
+}
+
+h1 {
+  font-weight: bold;
+  padding: 12px
+}
+
+.btn {
+  font-size: 20px;
+  margin-bottom: 5px;
+  margin-left: 2px;
+  margin-right: 2px
+}
+
+main {
+  padding: 25px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 40px;
+  padding: 5px
+}
+
+#watch-anime {
+  margin-top: 35px;
+}
+
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Anime4You</title>
+  </head>
+  <body class="black">
+    <header class="yellow darken-2">
+      <h1>Anime4You</h1>
+      <div id="search">
+        <button
+          id="search-anime"
+          class="btn"
+          data-toggle="modal"
+          data-target="anime-modal"
+        >
+          Search Anime
+        </button>
+        <button
+          id="search-genre"
+          class="btn"
+          data-toggle="modal"
+          data-target="genre-modal"
+        >
+          Search Genre
+        </button>
+      </div>
+    </header>
+
+    <main class="row">
+      <section class="anime-list col s9">
+        <section id="current-airing-anime" class="orange darken-1">
+          <h2>Current Airing Anime</h2>
+          <div id="current-airing-list"></div>
+        </section>
+
+        <section id="top-anime" class="orange darken-4">
+          <h2>Top Anime</h2>
+          <div id="top-anime-list"></div>
+        </section>
+      </section>
+
+      <section id="watch-anime" class="orange lighten-2 col s3">
+        <h2>Watchlist</h2>
+        <ol id="watch-anime-list"></ol>
+      </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>
