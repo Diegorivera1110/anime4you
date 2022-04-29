@@ -3,6 +3,22 @@ header {
   text-align: center;
 }
 
+/* added by Diego for anime search input */
+#search-anime {
+  align-items: center;
+  /* width: 30%; */
+}
+
+#anime-search-input,
+#search-anime {
+  height: 50px;
+}
+
+
+.anime-search-input {
+  text-align: center;
+}
+
 h1 {
   font-weight: bold;
   padding: 12px;
