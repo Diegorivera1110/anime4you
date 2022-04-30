@@ -22,9 +22,25 @@
       <p>Look up anime and add your watch list.</p>
 
       <!-- Search Button Sections-->
-      <div class="row" id="search-anime">
+      <div class="row">
       <input id="anime-search-input" class="anime-search-input col s4 offset-s3 white" placeholder="Enter Anime title" type="text" />
-      <button id="search-anime" class="btn col s2">Search Anime</button>
+      <button id="search-anime" class="btn col s2 modal-trigger" data-target="animeInfo" >Search Anime</button>
+
+      <!-- div to present display screen showing searched results -->
+        <div id="animeInfo" class="modal">
+          <div class="modal-content">
+
+            <img src="" alt="" id="animeImg" />
+            <h3 id="noAnime" class="display-off">No Anime has been found.</h3>
+            <h3 id="animeTitle"></h3>
+            <p id="synopsis"></p>
+            <div id="manga"></div>
+
+          <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect btn-flat"></a>
+          </div>
+        </div>
+
     </div>
       <div id="search">
         <button id="search-genre" class="btn">Search Genre</button>
@@ -56,7 +72,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="./assets/js/script.js"></script>
+    <!-- <script src="./assets/js/script.js"></script> -->
     <script src="./assets/js/diegoscript.js"></script>
   </body>
 </html>
