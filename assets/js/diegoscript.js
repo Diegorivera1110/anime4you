@@ -6,17 +6,14 @@ var mangaCheck = false;
 var searchAnime = function(anime) {
   console.log(anime);
 
-    
-  // var apiUrl = "https://api.jikan.moe/v3/search/anime?q=" + title + "&order_by=members&sort=desc&page=1";
+  // API call 
   var apiUrl =  "https://api.jikan.moe/v3/search/anime?q=" + anime + "&page=1"
-
+// API fetch
   fetch(apiUrl).then(function(response) {
     if(response.ok){
         response.json().then(function(data){
             console.log(data);
-            // console.log(data.results[0].title)
-            // console.log(data.results[0].synopsis)
-            // console.log(data.results[0].image_url)
+
             $("#noAnime").addClass("display-off");
 
             $("#animeTitle").text(data.results[0].title);
@@ -40,7 +37,7 @@ var searchAnime = function(anime) {
       })
     };
     
-    
+    // filters throgh anime's info to see if there is a manga as  well
     function gotManga(name) {
       
       var apiUrl =  "https://api.jikan.moe/v3/search/manga?q=" + name + "&page=1"
@@ -61,13 +58,7 @@ var searchAnime = function(anime) {
   })
   };
 
-
-  // document.addEventListener("DOMContentLoaded", function(){
-  //   var elems = document.querySelectorAll('#modal1');
-  //   var instances = M.Modal.init(elems, onOpenStart)
-  //   console.log()
-  // })
-
+// uses materializecss modal form to display User requested anime info
   $(document).ready(function(){
     $('.modal').modal();
   });
@@ -79,4 +70,3 @@ var searchAnime = function(anime) {
       searchAnime(animeTitleInput.value);
   })
 
-// searchAnime();
