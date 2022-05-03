@@ -64,14 +64,30 @@ h2 {
   border-radius: 20px;
 }
 
+.watchlist-item-info {
+  justify-content: space-between;
+}
+
+.anime-name {
+  font-size: 15px;
+}
+
+.delete-from-watchlist {
+  font-size: 15px;
+  background-color: #01579b ;
+  border-radius: 5px;
+  margin-left: 10px;
+  float: left;
+}
+
 #manga {
   padding: 10px;
 }
 
-.display-off {
-  display: none;
-}
-
 .flex-row {
   display: flex;
+}
+
+.display-off {
+  display: none;
 }
