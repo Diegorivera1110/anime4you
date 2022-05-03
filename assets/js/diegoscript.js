@@ -19,19 +19,22 @@ function searchAnime(anime) {
             $("#animeTitle").text(data.results[0].title);
             $("#synopsis").text(data.results[0].synopsis);
             $("#animeImg").attr("src", data.results[0].image_url);
+            $("#add-anime").removeClass("display-off");
 
             gotManga(data.results[0].title);
-            animeRecommender(anime)
+            animeRecommender(anime);
            
           })
         } else {
           $("#animeTitle").text("");
           $("#synopsis").text("");
           $("#animeImg").attr("src", "");
+          $("#add-anime").addClass("display-off");
 
           $("#manga").text("");
-
           $("#noAnime").removeClass("display-off");
+          $("#recommend-section").addClass("display-off");
+          $("#no-recommended").addClass("display-off");
 
         }
       })
@@ -103,11 +106,11 @@ function animeRecommender(title) {
           if (data.data == "Anime Not Found") {
            
             $("#no-recommended").removeClass("display-off")
-            document.querySelector("#recommend-section").style.display = "none"
+            $("#recommend-section").addClass("display-off")
           } else {
          
             $("#no-recommended").addClass("display-off")
-            document.querySelector("#recommend-section").style.display = "block"
+            $("#recommend-section").removeClass("display-off")
             displayRecommended(data);
           }
 
