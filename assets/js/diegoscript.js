@@ -3,7 +3,7 @@ var animeTitleInput = document.querySelector("#anime-search-input")
 var mangaCheck = false;
 
 
-var searchAnime = function(anime) {
+function searchAnime(anime) {
 
 
   // API call 
@@ -12,7 +12,7 @@ var searchAnime = function(anime) {
   fetch(apiUrl).then(function(response) {
     if(response.ok){
         response.json().then(function(data){
-            console.log(data);
+            // console.log(data);
 
             $("#noAnime").addClass("display-off");
 
@@ -21,7 +21,7 @@ var searchAnime = function(anime) {
             $("#animeImg").attr("src", data.results[0].image_url);
 
             gotManga(data.results[0].title);
-            
+            animeRecommender(anime)
            
           })
         } else {
@@ -40,7 +40,7 @@ var searchAnime = function(anime) {
     // filters throgh anime's info to see if there is a manga as  well
     function gotManga(name) {
       
-      var apiUrl =  "https://api.jikan.moe/v3/search/manga?q=" + name + "&page=1"
+      var apiUrl =  "https://api.jikan.moe/v3/search/manga?q=" + name + "&page=1";
       
       fetch(apiUrl).then(function(response) {
         if(response.ok){
@@ -58,14 +58,82 @@ var searchAnime = function(anime) {
   })
   };
 
+function displayRecommended(animeList) {
+  // console.log(animeList);
+  let reclist = $("#recommendation-list");
+  reclist.text("")
+  for (let i = 0; i < 3; i++) {
+
+    let animeCard = document.createElement("div");
+    animeCard.setAttribute("class","card orange lighten-4");
+    let cardInfo = document.createElement("div");
+    cardInfo.setAttribute("class","card-content");
+    cardInfo.style.padding = "5px";
+    let cardImg = document.createElement("img");
+    cardImg.setAttribute("src",animeList.data[i].coverImage.large);
+    let cardTitle = document.createElement("span");
+    cardTitle.setAttribute("class","card-title");
+    cardTitle.textContent = animeList.data[i].title.english;
+    cardInfo.appendChild(cardImg);
+    cardInfo.appendChild(cardTitle);
+    animeCard.appendChild(cardInfo);
+
+    // add to top anime list
+    reclist.append(animeCard);
+  }
+
+}
+
+
+function animeRecommender(title) {
+  const options = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Host': 'anime-recommender.p.rapidapi.com',
+      'X-RapidAPI-Key': '8f3a80d81dmsh343478cdfc5c7dfp1d7768jsncfbd4adb9453'
+    }
+  }
+    var apiCall = 'https://anime-recommender.p.rapidapi.com/?anime_title=' + title + '&number_of_anime=3';
+ 
+    fetch(apiCall, options).then(function(response) {
+      if(response.ok) {
+        response.json().then(function(data) {
+          // console.log(data);
+          
+          if (data.data == "Anime Not Found") {
+           
+            $("#no-recommended").removeClass("display-off")
+            document.querySelector("#recommendation-list").style.display = "none"
+          } else {
+         
+            $("#no-recommended").addClass("display-off")
+            document.querySelector("#recommendation-list").style.display = "flex"
+            displayRecommended(data);
+          }
+
+        }) 
+      }
+    })
+    
+  };
+
+
+  $("#recommendation-list").on("click", ".card", function(){
+    // console.log(this)
+    searchAnime($(this).find(".card-content").find(".card-title").text())
+  })
+
+
 // uses materializecss modal form to display User requested anime info
   $(document).ready(function(){
     $('.modal').modal();
   });
 
 
+
+
   animeSearchEl.addEventListener("click", function() {
-      console.log("click");
+      // console.log("click");
 
       searchAnime(animeTitleInput.value);
   })

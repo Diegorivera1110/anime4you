@@ -46,10 +46,17 @@ h2 {
   padding: 5px
 }
 
-#current-airing-list, #top-anime-list {
+#current-airing-list, 
+#top-anime-list {
   display: flex;
   overflow: scroll;
 }
+
+#recommendation-list {
+  display: flex;
+  overflow: scroll;
+}
+
 
 #watch-anime {
   margin-top: 35px;

@@ -5,7 +5,7 @@ function getCurrentAnime() {
   fetch(apiUrl).then(function (response) {
     if(response.ok) {
       response.json().then(function (data) {
-        console.log(data);
+        // console.log(data);
         // Display current anime to the dom
         displayCurrentAnime(data.anime);
       })
@@ -19,7 +19,7 @@ function getCurrentAnime() {
 // Function to display the first 10 current animes
 function displayCurrentAnime(animeList) {
   let currentAirList = $("#current-airing-list");
-  console.log(animeList);
+  // console.log(animeList);
   for(let i = 0; i < 10; i++) {
     // Making an anime information card
     let animeCard = document.createElement("div");
@@ -48,7 +48,7 @@ function getTopAnime() {
   fetch(apiUrl).then(function (response) {
     if(response.ok) {
       response.json().then(function (data) {
-        console.log(data);
+        // console.log(data);
         // Display top anime to the dom
         displayTopAnime(data.top);
       })
@@ -62,7 +62,7 @@ function getTopAnime() {
 // Function to display the first 10 top animes
 function displayTopAnime(animeList) {
   let topList = $("#top-anime-list");
-  console.log(animeList);
+  // console.log(animeList);
   for(let i = 0; i < 10; i++) {
     // Making an anime information card
     let animeCard = document.createElement("div");
