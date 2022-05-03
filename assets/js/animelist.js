@@ -23,7 +23,8 @@ function displayCurrentAnime(animeList) {
   for(let i = 0; i < 10; i++) {
     // Making an anime information card
     let animeCard = document.createElement("div");
-    animeCard.setAttribute("class","card orange lighten-4");
+    animeCard.setAttribute("class","card orange lighten-4 modal-trigger");
+    animeCard.setAttribute("data-target", "animeInfo");
     let cardInfo = document.createElement("div");
     cardInfo.setAttribute("class","card-content");
     cardInfo.style.padding = "5px";
@@ -66,7 +67,8 @@ function displayTopAnime(animeList) {
   for(let i = 0; i < 10; i++) {
     // Making an anime information card
     let animeCard = document.createElement("div");
-    animeCard.setAttribute("class","card orange lighten-4");
+    animeCard.setAttribute("class","card orange lighten-4 modal-trigger");
+    animeCard.setAttribute("data-target", "animeInfo");
     let cardInfo = document.createElement("div");
     cardInfo.setAttribute("class","card-content");
     cardInfo.style.padding = "5px";
@@ -83,6 +85,18 @@ function displayTopAnime(animeList) {
     topList.append(animeCard);
   }
 }
+
+
+// Event Listener for anime within current airing list to show anime info
+$("#current-airing-list").on("click", ".card", function(){
+  searchAnime($(this).find(".card-content").find(".card-title").text())
+})
+
+// Event Listener for anime within top anime list to show anime info
+$("#top-anime-list").on("click", ".card", function(){
+  // console.log(this)
+  searchAnime($(this).find(".card-content").find(".card-title").text())
+})
 
 getCurrentAnime();
 getTopAnime();
