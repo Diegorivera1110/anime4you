@@ -103,11 +103,11 @@ function animeRecommender(title) {
           if (data.data == "Anime Not Found") {
            
             $("#no-recommended").removeClass("display-off")
-            document.querySelector("#recommendation-list").style.display = "none"
+            document.querySelector("#recommend-section").style.display = "none"
           } else {
          
             $("#no-recommended").addClass("display-off")
-            document.querySelector("#recommendation-list").style.display = "flex"
+            document.querySelector("#recommend-section").style.display = "block"
             displayRecommended(data);
           }
 

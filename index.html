@@ -29,13 +29,21 @@
       <!-- div to present display screen showing searched results -->
         <div id="animeInfo" class="modal">
           <div class="modal-content">
-
-            <img src="" alt="" id="animeImg" />
-            <h3 id="noAnime" class="display-off">No Anime has been found.</h3>
-            <h3 id="animeTitle"></h3>
-            <p id="synopsis"></p>
-            <div id="manga"></div>
-            <div id="recommendation-list"></div>
+            <div class = "flex-row">
+              <img src="" alt="" id="animeImg" />
+              <div id="anime-content">
+                <h3 id="noAnime" class="display-off">No Anime has been found.</h3>
+                <h3 id="animeTitle"></h3>
+                <p id="synopsis"></p>
+                <button id="add-anime" class="btn">Add Anime to Watchlist</button>
+              </div>
+            </div>
+            <h3 id="manga"></h3>
+            <div id = "recommend-section">
+              <h3>Recommended Anime</h3>
+              <div id="recommendation-list"></div>
+              
+            </div>
             <h3 id="no-recommended" class="display-off">No recommended Anime</h3>
 
           <div class="modal-footer">

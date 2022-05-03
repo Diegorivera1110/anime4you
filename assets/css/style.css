@@ -54,7 +54,7 @@ h2 {
 
 #recommendation-list {
   display: flex;
-  overflow: scroll;
+  justify-content: center;
 }
 
 
@@ -64,6 +64,14 @@ h2 {
   border-radius: 20px;
 }
 
+#manga {
+  padding: 10px;
+}
+
 .display-off {
   display: none;
+}
+
+.flex-row {
+  display: flex;
 }
