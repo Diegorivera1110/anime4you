@@ -10,56 +10,76 @@ function searchAnime(anime) {
   var apiUrl =  "https://api.jikan.moe/v3/search/anime?q=" + anime + "&page=1"
 // API fetch
   fetch(apiUrl).then(function(response) {
+    $("#load-info").removeClass("display-off");
+    $("#anime-modal-info").addClass("display-off");
     if(response.ok){
-        response.json().then(function(data){
-            // console.log(data);
+      response.json().then(function(data){
+        // console.log(data);
 
-            $("#noAnime").addClass("display-off");
+        $("#noAnime").addClass("display-off");
 
-            $("#animeTitle").text(data.results[0].title);
-            $("#synopsis").text(data.results[0].synopsis);
-            $("#animeImg").attr("src", data.results[0].image_url);
-            $("#add-anime").removeClass("display-off");
+        $("#animeTitle").text(data.results[0].title);
+        $("#synopsis").text(data.results[0].synopsis);
+        $("#animeImg").attr("src", data.results[0].image_url);
+        $("#add-anime").removeClass("display-off");
+        
+        $("#load-info").addClass("display-off");
+        $("#anime-modal-info").removeClass("display-off");
 
-            gotManga(data.results[0].title);
-            animeRecommender(anime);
-           
-          })
-        } else {
-          $("#animeTitle").text("");
-          $("#synopsis").text("");
-          $("#animeImg").attr("src", "");
-          $("#add-anime").addClass("display-off");
 
-          $("#manga").text("");
-          $("#noAnime").removeClass("display-off");
-          $("#recommend-section").addClass("display-off");
-          $("#no-recommended").addClass("display-off");
+        $("#manga").text("");
+        $("#recommend-section").addClass("display-off");
+        $("#no-recommended").addClass("display-off");
+        
+        $("#load-manga").removeClass("display-off");
 
-        }
+        $("#load-recommend").removeClass("display-off");
+        $("#manga").addClass("display-off");
+        $("#no-recommended").addClass("display-off");
+        $("#recommend-section").addClass("display-off");
+
+        gotManga(data.results[0].title);
+        animeRecommender(anime);
+        })
+    } else {
+      $("#animeTitle").text("");
+      $("#synopsis").text("");
+      $("#animeImg").attr("src", "");
+      $("#add-anime").addClass("display-off");
+
+      $("#manga").text("");
+      $("#noAnime").removeClass("display-off");
+      $("#recommend-section").addClass("display-off");
+      $("#no-recommended").addClass("display-off");
+
+      $("#load-info").addClass("display-off");
+      $("#anime-modal-info").removeClass("display-off");
+
+      }
       })
     };
     
-    // filters throgh anime's info to see if there is a manga as  well
-    function gotManga(name) {
+// filters throgh anime's info to see if there is a manga as  well
+function gotManga(name) {    
+  var apiUrl =  "https://api.jikan.moe/v3/search/manga?q=" + name + "&page=1";
       
-      var apiUrl =  "https://api.jikan.moe/v3/search/manga?q=" + name + "&page=1";
-      
-      fetch(apiUrl).then(function(response) {
-        if(response.ok){
-          response.json().then(function(data){
-            
-            if (data.results.length > 0) {
-              $("#manga").text("Has a manga")
-            } else {
-              $("#manga").text("Does not have Manga");
-            }
+  fetch(apiUrl).then(function(response) {
+    if(response.ok){
+      response.json().then(function(data){
 
+      if (data.results.length > 0) {
+        $("#manga").text("Has a manga")
+      } else {
+        $("#manga").text("Does not have Manga");
+      }
 
-        })
+      $("#load-manga").addClass("display-off");
+      $("#manga").removeClass("display-off");
+
+      })
     }
   })
-  };
+};
 
 function displayRecommended(animeList) {
   // console.log(animeList);
@@ -96,48 +116,41 @@ function animeRecommender(title) {
       'X-RapidAPI-Key': '8f3a80d81dmsh343478cdfc5c7dfp1d7768jsncfbd4adb9453'
     }
   }
-    var apiCall = 'https://anime-recommender.p.rapidapi.com/?anime_title=' + title + '&number_of_anime=3';
+  
+  var apiCall = 'https://anime-recommender.p.rapidapi.com/?anime_title=' + title + '&number_of_anime=3';
  
-    fetch(apiCall, options).then(function(response) {
-      if(response.ok) {
-        response.json().then(function(data) {
-          // console.log(data);
-          
-          if (data.data == "Anime Not Found") {
+  fetch(apiCall, options).then(function(response) {
+    if(response.ok) {
+      response.json().then(function(data) {
+        // console.log(data);
+
+        if (data.data == "Anime Not Found") {
            
-            $("#no-recommended").removeClass("display-off")
-            $("#recommend-section").addClass("display-off")
-          } else {
-         
-            $("#no-recommended").addClass("display-off")
-            $("#recommend-section").removeClass("display-off")
-            displayRecommended(data);
-          }
+          $("#load-recommend").addClass("display-off");
+          $("#no-recommended").removeClass("display-off")
+        } else {
+             
+          displayRecommended(data);
+          $("#load-recommend").addClass("display-off");
+          $("#recommend-section").removeClass("display-off")
+        }
 
         }) 
       }
     })
     
-  };
+};
 
 
-  $("#recommendation-list").on("click", ".card", function(){
-    // console.log(this)
-    searchAnime($(this).find(".card-content").find(".card-title").text())
-  })
-
+$("#recommendation-list").on("click", ".card", function(){
+  searchAnime($(this).find(".card-content").find(".card-title").text())
+})
 
 // uses materializecss modal form to display User requested anime info
-  $(document).ready(function(){
-    $('.modal').modal();
-  });
+$(document).ready(function(){
+  $('.modal').modal();
+});
 
-
-
-
-  animeSearchEl.addEventListener("click", function() {
-      // console.log("click");
-
-      searchAnime(animeTitleInput.value);
-  })
-
+animeSearchEl.addEventListener("click", function() {
+  searchAnime(animeTitleInput.value);
+})
