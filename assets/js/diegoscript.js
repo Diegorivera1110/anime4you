@@ -45,6 +45,7 @@ function searchAnime(anime) {
       
       var apiUrl =  "https://api.jikan.moe/v3/search/manga?q=" + name + "&page=1";
       
+
       fetch(apiUrl).then(function(response) {
         if(response.ok){
           response.json().then(function(data){
@@ -54,6 +55,7 @@ function searchAnime(anime) {
             } else {
               $("#manga").text("Does not have Manga");
             }
+
 
 
         })
@@ -112,6 +114,8 @@ function animeRecommender(title) {
             $("#no-recommended").addClass("display-off")
             $("#recommend-section").removeClass("display-off")
             displayRecommended(data);
+
+            
           }
 
         }) 
