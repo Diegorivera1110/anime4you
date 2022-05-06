@@ -30,6 +30,8 @@ function addToWatchList(aName) {
   watchList.append(watchListItem);
 }
 
+
+// Event Listener to add anime to watchlist and save to local storage
 $("#add-anime").on("click", function(){
   const index = savedAnime.indexOf($("#animeTitle").text());
   if(index == -1) {
@@ -39,6 +41,7 @@ $("#add-anime").on("click", function(){
   }
 });
 
+// Event Listener to remove anime from watchlist and save to local storage
 watchList.on("click",".delete-from-watchlist",function() {
   const index = savedAnime.indexOf($(this).parent().find(".anime-name").text());
   savedAnime.splice(index);
