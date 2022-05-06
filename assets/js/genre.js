@@ -13,8 +13,6 @@ function getGenre(genreId){
 }
 
 $("#genre-dropdown").on('click', ".genre" ,function(){
-    
-
     getGenre(this.getAttribute("data-number"));
 })
 
@@ -43,6 +41,12 @@ function displayGenreAnime(animeList) {
   }
 }
 
+$("#genre-dropdown").on('click', ".genre" ,function(){
+    
+
+    getGenre(this.getAttribute("data-number"));
+})
+
 $("#genre-list").on("click", ".card", function(){
     searchAnime($(this).find(".card-content").find(".card-title").text())
-  })
+})
