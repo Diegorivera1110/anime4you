@@ -4,8 +4,6 @@ var mangaCheck = false;
 
 
 function searchAnime(anime) {
-
-
   // API call 
   var apiUrl =  "https://api.jikan.moe/v3/search/anime?q=" + anime + "&page=1"
 // API fetch
@@ -15,7 +13,7 @@ function searchAnime(anime) {
     if(response.ok){
       response.json().then(function(data){
         // console.log(data);
-
+          // below is the jQuery that adds the modal displaying the info from the jikan API
         $("#noAnime").addClass("display-off");
 
         $("#animeTitle").text(data.results[0].title);
@@ -116,7 +114,7 @@ function animeRecommender(title) {
       'X-RapidAPI-Key': '8f3a80d81dmsh343478cdfc5c7dfp1d7768jsncfbd4adb9453'
     }
   }
-  
+  // api call from the anime recommender api displaying only 3
   var apiCall = 'https://anime-recommender.p.rapidapi.com/?anime_title=' + title + '&number_of_anime=3';
  
   fetch(apiCall, options).then(function(response) {
@@ -141,7 +139,7 @@ function animeRecommender(title) {
     
 };
 
-
+// event listener allowing the client to click on the anime's card taking them to a modal displaying the anime they clicked
 $("#recommendation-list").on("click", ".card", function(){
   searchAnime($(this).find(".card-content").find(".card-title").text())
 })
@@ -150,7 +148,7 @@ $("#recommendation-list").on("click", ".card", function(){
 $(document).ready(function(){
   $('.modal').modal();
 });
-
+// event listener for the search button linked to the input area
 animeSearchEl.addEventListener("click", function() {
   searchAnime(animeTitleInput.value);
 })
