@@ -3,10 +3,11 @@ header {
   text-align: center;
 }
 
-/* added by Diego for anime search input */
+header p {
+  font-size: 25px;
+}
 #search-anime {
   align-items: center;
-  /* width: 30%; */
 }
 
 #anime-search-input,
@@ -30,9 +31,6 @@ h1 {
   padding-bottom: 0px;
 }
 
-header p {
-  font-size: 25px;
-}
 
 .btn {
   font-size: 20px;
