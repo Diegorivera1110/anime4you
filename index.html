@@ -55,8 +55,31 @@
         </div>
 
     </div>
-      <div id="search">
-        <button id="search-genre" class="btn">Search Genre</button>
+    <div id="search">
+    <!-- Dropdown Trigger -->
+<a class='dropdown-trigger ' href='#' data-target='genre-dropdown'>Seach Genre!</a>
+<button id="search-genre" class="btn modal-trigger" data-target="genre-modal">Search Genre</button>
+<div id="genre-modal" class="modal">
+  <div class="modal-content">
+    <div id="genre-list">
+
+    </div>
+  </div> 
+</div>
+
+<!-- Dropdown Structure -->
+<ul id='genre-dropdown' class='dropdown-content'>
+  <li><a class="genre" href="#" data-number="1">Action</a></li>
+  <li><a class="genre" href="#!" data-number="2">Adventure</a></li>
+  <li><a class="genre" href="#!" data-number="4">Comedy</a></li>
+  <li><a class="genre" href="#!" data-number="7">Mystery</a></li>
+  <li><a class="genre" href="#!" data-number="8">Drama</a></li>
+  <li><a class="genre" href="#!" data-number="27">Shounen</a></li>
+  <li><a class="genre" href="#!" data-number="23">School</a></li>
+  <li><a class="genre" href="#!" data-number="30">Sports</a></li>
+  <li><a class="genre" href="#!" data-number="18">Mecha</a></li>
+  <li><a class="genre" href="#!" data-number="37">Supernatural</a></li>
+</ul>
       </div>
     </header>
 
@@ -89,6 +112,7 @@
     <script src="./assets/js/animelist.js"></script>
     <script src="./assets/js/diegoscript.js"></script>
     <script src="./assets/js/watchlist.js"></script>
+    <script src="./assets/js/genre.js"></script>
   </body>
 </html>
 
