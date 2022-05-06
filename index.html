@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Anime4You</title>
+  </head>
+  <body class="black">
+    <!-- Header Section -->
+    <header class="yellow darken-2">
+      <h1>Anime4You</h1>
+      <p>Look up anime and add your watch list.</p>
+
+      <!-- Search Button Sections-->
+      <div class="row">
+      <input id="anime-search-input" class="anime-search-input col s12 m4 offset-m3 white" placeholder="Enter Anime title" type="text" />
+      <button id="search-anime" class="btn col s12 m3 l3 modal-trigger" data-target="animeInfo" >Search Anime</button>
+
+      <!-- div to present display screen showing searched results -->
+        <div id="animeInfo" class="modal">
+          <h3 id="load-info" class="display-off">Searching Anime Info ...</h3>
+          <div class="modal-content" id="anime-modal-content">  
+            <h3 id="noAnime" class="display-off">No Anime has been found.</h3>
+            <div class = "flex-row">
+              <img src="" alt="" id="animeImg" />
+              <div id="anime-content">
+                <h3 id="animeTitle"></h3>
+                <p id="synopsis"></p>
+                <button id="add-anime" class="btn display-off">Add Anime to Watchlist</button>
+              </div>
+            </div>
+            <h3 id="load-manga" class="display-off">Checking to see if there is manga ...</h3>
+            <h3 id="manga"></h3>
+
+            <h3 id="load-recommend" class="display-off">Searching for recommended ...</h3>
+            <div id = "recommend-section">
+              <h3>Recommended Anime</h3>
+              <div id="recommendation-list"></div>
+            </div>
+            <h3 id="no-recommended" class="display-off">No recommended Anime</h3>
+
+          <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect btn-flat"></a>
+          </div>
+        </div>
+
+    </div>
+      <div id="search">
+        <button id="search-genre" class="btn">Search Genre</button>
+      </div>
+    </header>
+
+    <main class="row">
+      <section class="col s12 m12 l9">
+        <!-- Current/Ongoing Anime List Section -->
+        <section id="current-airing-anime" class="anime-list orange darken-1">
+          <h2>Current Airing Anime</h2>
+          <div id="current-airing-list"></div>
+        </section>
+
+        <!-- Top Rated Anime List Section -->
+        <section id="top-anime" class="anime-list orange darken-4">
+          <h2>Top Anime</h2>
+          <div id="top-anime-list"></div>
+        </section>
+      </section>
+
+      <!-- Watch Anime List -->
+      <section id="watch-anime" class="orange lighten-2 col s12 m12 l3">
+        <h2>Watchlist</h2>
+        <ul id="watch-anime-list"></ul>
+      </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/animelist.js"></script>
+    <script src="./assets/js/diegoscript.js"></script>
+    <script src="./assets/js/watchlist.js"></script>
+  </body>
+</html>
+

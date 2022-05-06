@@ -1,0 +1,94 @@
+header {
+  margin-top: -39px;
+  text-align: center;
+}
+
+/* added by Diego for anime search input */
+#search-anime {
+  align-items: center;
+  /* width: 30%; */
+}
+
+#anime-search-input,
+#search-anime {
+  height: 50px;
+}
+
+
+.anime-search-input {
+  text-align: center;
+}
+
+h1 {
+  font-weight: bold;
+  padding: 12px;
+  padding-bottom: 0px;
+}
+
+header p {
+  font-size: 25px;
+}
+
+.btn {
+  font-size: 20px;
+  margin-bottom: 5px;
+  margin-left: 2px;
+  margin-right: 2px
+}
+
+main {
+  padding: 25px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 40px;
+  padding: 5px
+}
+
+#current-airing-list, 
+#top-anime-list {
+  display: flex;
+  overflow: scroll;
+}
+
+#recommendation-list {
+  display: flex;
+  justify-content: center;
+}
+
+
+#watch-anime {
+  margin-top: 35px;
+  min-height: 450px;
+  border-radius: 20px;
+}
+
+.watchlist-item-info {
+  justify-content: space-between;
+}
+
+.anime-name {
+  font-size: 15px;
+}
+
+.delete-from-watchlist {
+  font-size: 15px;
+  background-color: #01579b ;
+  border-radius: 5px;
+  margin-left: 10px;
+  float: left;
+}
+
+#manga {
+  padding: 10px;
+}
+
+.flex-row {
+  display: flex;
+}
+
+.display-off {
+  display: none;
+}
+
