@@ -31,7 +31,7 @@
           <h3 id="load-info" class="display-off">Searching Anime Info ...</h3>
           <div class="modal-content" id="anime-modal-content">  
             <h3 id="noAnime" class="display-off">No Anime has been found.</h3>
-            <div class = "flex-row">
+            <div class="animeObjects">
               <img src="" alt="" id="animeImg" />
               <div id="anime-content">
                 <h3 id="animeTitle"></h3>
@@ -55,10 +55,10 @@
         </div>
 
     </div>
-    <div id="search">
+    <!-- <div id="search"> -->
     <!-- Dropdown Trigger -->
-<a class='dropdown-trigger ' href='#' data-target='genre-dropdown'>Seach Genre!</a>
-<button id="search-genre" class="btn modal-trigger" data-target="genre-modal">Search Genre</button>
+<a class='dropdown-trigger white col s12 m4 offset-m3' href='#' data-target='genre-dropdown' id="pick-genre">Pick Genre:</a>
+<button id="search-genre" class="btn modal-trigger col s12 m3 l3" data-target="genre-modal">Search Genre</button>
 <div id="genre-modal" class="modal">
   <div class="modal-content">
     <div id="genre-list">
@@ -80,7 +80,7 @@
   <li><a class="genre" href="#!" data-number="18">Mecha</a></li>
   <li><a class="genre" href="#!" data-number="37">Supernatural</a></li>
 </ul>
-      </div>
+    
     </header>
 
     <main class="row">
