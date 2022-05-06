@@ -5,9 +5,7 @@ function getCurrentAnime() {
   fetch(apiUrl).then(function (response) {
     if(response.ok) {
       response.json().then(function (data) {
-        // console.log(data);
         // Display current anime to the dom
-        //displayCurrentAnime(data.anime);
         displayAnimeList(data.anime,$("#current-airing-list"),10);
       })
     }
