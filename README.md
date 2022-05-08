@@ -25,7 +25,7 @@ Anime web application created by Peter Tran, Diego Rivera, and Gonzalo Hernandez
 
 ## API
 
-Start Here
+Jikan and Anime Recommender are the two APIs used in this project.
 
 ---
 
@@ -33,7 +33,7 @@ Start Here
 
 ### Jikan API
 
-Start Here
+Jikan API was used to get lists of anime and anime information.
 
 ---
 
@@ -41,7 +41,7 @@ Start Here
 
 ### Anime Recommender API
 
-Start Here
+Anime Recommender was used to get a list of anime that was related to the provided anime given by the user.
 
 ---
 
@@ -49,7 +49,7 @@ Start Here
 
 ## Materialize CSS Framework
 
-Start Here
+Materialize CSS allows us to stylize the page using grid, color classes, modules and dropdowns.
 
 ---
 
@@ -57,7 +57,7 @@ Start Here
 
 ## Features
 
-Start Here
+Anime4You provided displaying of the current and top airing animes, searching for specific anime, searching by genre, displaying anime info, and adding/deleting to watchlist.
 
 ---
 
@@ -65,7 +65,7 @@ Start Here
 
 ### Current and Top Anime Lists
 
-Start Here
+Current anime list displays anime showing in the current season and top list displays most popular anime. Information of current season anime and top anime is retrieved from Jikan API.
 
 ---
 
@@ -73,7 +73,7 @@ Start Here
 
 ### Anime Search
 
-Start Here
+When pressing the search anime button, a module will pop up with information of the inputted anime gotten from Jikan API and Anime Recommender.
 
 ---
 
@@ -81,7 +81,7 @@ Start Here
 
 ### Genre Search
 
-Start Here
+Genre search is presetted with 10 genres that are shown in a dropdown. After a genre is selected and the search genre button has been pressed, a module will pop up with a list that displays anime under the selected genre. Information of anime under certain genre is gotten from Jikan API. 
 
 ---
 
@@ -89,7 +89,7 @@ Start Here
 
 ### Anime Info
 
-Start Here
+Display anime information is split into anime image, synopsis, manga verification, and recommended anime list. Jikan helps us get anime image, synopsis, and manga verification. Anime Recommender helps us get the list of recommended anime. 
 
 ---
 
@@ -97,7 +97,7 @@ Start Here
 
 ### Watchlist
 
-Start Here
+Users are allowed to make their own watchlist. They can either add or remove anime from the watchlist. The watchlist will persist even after reloading the page because the watchlist is stored in a local storage.
 
 ---
 
