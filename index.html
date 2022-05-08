@@ -21,66 +21,105 @@
       <h1>Anime4You</h1>
       <p>Look up anime and add your watch list.</p>
 
-      <!-- Search Button Sections-->
+      <!-- Search Section -->
       <div class="row">
-      <input id="anime-search-input" class="anime-search-input col s12 m4 offset-m3 white" placeholder="Enter Anime title" type="text" />
-      <button id="search-anime" class="btn col s12 m3 l3 modal-trigger" data-target="animeInfo" >Search Anime</button>
+        <!-- Search Specific Anime Section -->
+        <input
+          id="anime-search-input"
+          class="anime-search-input col s12 m4 offset-m3 white"
+          placeholder="Enter Anime title"
+          type="text"
+        />
+        <button
+          id="search-anime"
+          class="btn col s12 m3 l3 modal-trigger"
+          data-target="animeInfo"
+        >
+          Search Anime
+        </button>
 
-      <!-- div to present display screen showing searched results -->
+        <!-- Anime Info Modal-->
         <div id="animeInfo" class="modal">
+          <!-- Loading Status for Anime Info -->
           <h3 id="load-info" class="display-off">Searching Anime Info ...</h3>
-          <div class="modal-content" id="anime-modal-content">  
+          <div class="modal-content" id="anime-modal-content">
             <h3 id="noAnime" class="display-off">No Anime has been found.</h3>
             <div class="animeObjects">
               <img src="" alt="" id="animeImg" />
               <div id="anime-content">
                 <h3 id="animeTitle"></h3>
                 <p id="synopsis"></p>
-                <button id="add-anime" class="btn display-off">Add Anime to Watchlist</button>
+                <button id="add-anime" class="btn display-off">
+                  Add Anime to Watchlist
+                </button>
               </div>
             </div>
-            <h3 id="load-manga" class="display-off">Checking to see if there is manga ...</h3>
+
+            <!-- Manga Part of Anime Info -->
+            <!-- Loading Status for Manga -->
+            <h3 id="load-manga" class="display-off">
+              Checking to see if there is manga ...
+            </h3>
+            <!-- Statement say there is/isn't a manga -->
             <h3 id="manga"></h3>
 
-            <h3 id="load-recommend" class="display-off">Searching for recommended ...</h3>
-            <div id = "recommend-section">
+            <!-- Recommended Part of Anime Info -->
+            <!-- Loading Status for Recommended-->
+            <h3 id="load-recommend" class="display-off">
+              Searching for recommended ...
+            </h3>
+            <div id="recommend-section">
               <h3>Recommended Anime</h3>
+              <!-- Recommended Anime List -->
               <div id="recommendation-list"></div>
             </div>
-            <h3 id="no-recommended" class="display-off">No recommended Anime</h3>
+            <h3 id="no-recommended" class="display-off">
+              No recommended Anime
+            </h3>
 
-          <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect btn-flat"></a>
+            <div class="modal-footer">
+              <a href="#!" class="modal-close waves-effect btn-flat"></a>
+            </div>
           </div>
         </div>
 
-    </div>
-    <!-- <div id="search"> -->
-    <!-- Dropdown Trigger -->
-<a class='dropdown-trigger white col s12 m4 offset-m3' href='#' data-target='genre-dropdown' id="pick-genre">Pick Genre:</a>
-<button id="search-genre" class="btn modal-trigger col s12 m3 l3" data-target="genre-modal">Search Genre</button>
-<div id="genre-modal" class="modal">
-  <div class="modal-content">
-    <div id="genre-list">
+        <!-- Search by Genre Section-->
+        <a
+          class="dropdown-trigger white col s12 m4 offset-m3"
+          href="#"
+          data-target="genre-dropdown"
+          id="pick-genre"
+          >Pick Genre:</a
+        >
+        <button
+          id="search-genre"
+          class="btn modal-trigger col s12 m3 l3"
+          data-target="genre-modal"
+        >
+          Search Genre
+        </button>
 
-    </div>
-  </div> 
-</div>
+        <!-- Genre Modal -->
+        <div id="genre-modal" class="modal">
+          <div class="modal-content">
+            <div id="genre-list"></div>
+          </div>
+        </div>
 
-<!-- Dropdown Structure -->
-<ul id='genre-dropdown' class='dropdown-content'>
-  <li><a class="genre" href="#" data-number="1">Action</a></li>
-  <li><a class="genre" href="#!" data-number="2">Adventure</a></li>
-  <li><a class="genre" href="#!" data-number="4">Comedy</a></li>
-  <li><a class="genre" href="#!" data-number="7">Mystery</a></li>
-  <li><a class="genre" href="#!" data-number="8">Drama</a></li>
-  <li><a class="genre" href="#!" data-number="27">Shounen</a></li>
-  <li><a class="genre" href="#!" data-number="23">School</a></li>
-  <li><a class="genre" href="#!" data-number="30">Sports</a></li>
-  <li><a class="genre" href="#!" data-number="18">Mecha</a></li>
-  <li><a class="genre" href="#!" data-number="37">Supernatural</a></li>
-</ul>
-    
+        <!-- Dropdown Structure for Genre -->
+        <ul id="genre-dropdown" class="dropdown-content">
+          <li><a class="genre" href="#" data-number="1">Action</a></li>
+          <li><a class="genre" href="#!" data-number="2">Adventure</a></li>
+          <li><a class="genre" href="#!" data-number="4">Comedy</a></li>
+          <li><a class="genre" href="#!" data-number="7">Mystery</a></li>
+          <li><a class="genre" href="#!" data-number="8">Drama</a></li>
+          <li><a class="genre" href="#!" data-number="27">Shounen</a></li>
+          <li><a class="genre" href="#!" data-number="23">School</a></li>
+          <li><a class="genre" href="#!" data-number="30">Sports</a></li>
+          <li><a class="genre" href="#!" data-number="18">Mecha</a></li>
+          <li><a class="genre" href="#!" data-number="37">Supernatural</a></li>
+        </ul>
+      </div>
     </header>
 
     <main class="row">
@@ -108,11 +147,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="./assets/js/script.js"></script>
     <script src="./assets/js/animelist.js"></script>
     <script src="./assets/js/diegoscript.js"></script>
     <script src="./assets/js/watchlist.js"></script>
     <script src="./assets/js/genre.js"></script>
   </body>
 </html>
-
