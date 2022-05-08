@@ -1,6 +1,6 @@
 # Anime4You
 
-Anime web application created by Peter Tran, Diego Rivera, and Gonzalo Hernandez.
+Anime web application created by Peter Tran, Diego Rivera, and Gonzalo Hernandez. The application allows for looking up anime information and creating your own watchlist.
 
 ---
 
@@ -81,7 +81,7 @@ When pressing the search anime button, a module will pop up with information of 
 
 ### Genre Search
 
-Genre search is presetted with 10 genres that are shown in a dropdown. After a genre is selected and the search genre button has been pressed, a module will pop up with a list that displays anime under the selected genre. Information of anime under certain genre is gotten from Jikan API. 
+Genre search is presetted with 10 genres that are shown in a dropdown. After a genre is selected and the search genre button has been pressed, a module will pop up with a list that displays anime under the selected genre. Information of anime under certain genre is gotten from Jikan API.
 
 ---
 
@@ -89,7 +89,7 @@ Genre search is presetted with 10 genres that are shown in a dropdown. After a g
 
 ### Anime Info
 
-Display anime information is split into anime image, synopsis, manga verification, and recommended anime list. Jikan helps us get anime image, synopsis, and manga verification. Anime Recommender helps us get the list of recommended anime. 
+When clicking an anime from any of the list (current, top, and genre) or searching by input, a module will pop up with anime info. Display anime information is split into anime image, synopsis, manga verification, and recommended anime list. Jikan helps us get anime image, synopsis, and manga verification. Anime Recommender helps us get the list of recommended anime.
 
 ---
 
@@ -105,7 +105,7 @@ Users are allowed to make their own watchlist. They can either add or remove ani
 
 ## Screenshot
 
-Image
+<img src ="./assets/images/Anime4You.gif" width="400">
 
 ---
 
@@ -113,4 +113,4 @@ Image
 
 ## Page Link
 
-Link:
+Link: https://diegorivera1110.github.io/anime4you/
